@@ -1,12 +1,12 @@
 package cell
 
-type NeighboringSpeciesCountMap map[OrganismSpecies]uint
+type NeighboringSpeciesCountMap map[OrganismSpecies]int
 
 type Neighbours struct {
 	NeighboringSpeciesCount NeighboringSpeciesCountMap
 }
 
-func (neighbours Neighbours) GetSpeciesWithCount(countToFilterBy uint) []OrganismSpecies {
+func (neighbours Neighbours) GetSpeciesWithCount(countToFilterBy int) []OrganismSpecies {
 	speciesToReturn := []OrganismSpecies{}
 
 	for organismSpecies, speciesCount := range neighbours.NeighboringSpeciesCount {
@@ -18,7 +18,7 @@ func (neighbours Neighbours) GetSpeciesWithCount(countToFilterBy uint) []Organis
 	return speciesToReturn
 }
 
-func createNeighboursFromCells(cells []Cell) Neighbours {
+func CreateNeighboursFromCells(cells []Cell) Neighbours {
 	neighboringSpeciesCount := NeighboringSpeciesCountMap{}
 
 	for _ , neighbour := range cells {

@@ -16,7 +16,7 @@ var sampleNeighbours = Neighbours{
 
 var gettingSpeciesWithCertainCountTestData = []struct {
 	title string
-	countToFilterBy uint
+	countToFilterBy int
 	expectedSpecies []OrganismSpecies
 }{
 	{
@@ -56,9 +56,9 @@ func TestCreatingNeighboursFromCells(t *testing.T) {
 		{OrganismSpecies: 2},
 	}
 
-	neighbours := createNeighboursFromCells(cells)
+	neighbours := CreateNeighboursFromCells(cells)
 
-	assert.Equal(t, uint(2), neighbours.NeighboringSpeciesCount[1])
-	assert.Equal(t, uint(3), neighbours.NeighboringSpeciesCount[2])
-	assert.Equal(t, uint(1), neighbours.NeighboringSpeciesCount[3])
+	assert.Equal(t, 2, neighbours.NeighboringSpeciesCount[1])
+	assert.Equal(t, 3, neighbours.NeighboringSpeciesCount[2])
+	assert.Equal(t, 1, neighbours.NeighboringSpeciesCount[3])
 }

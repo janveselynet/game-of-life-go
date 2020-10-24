@@ -1,5 +1,5 @@
 package cell
 
-type OrganismSpecies uint
+type OrganismSpecies int
 
 const EmptyOrganismSpecies = OrganismSpecies(0)
